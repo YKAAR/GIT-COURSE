@@ -6,7 +6,7 @@ int main() {
 
   int N;
   cout << "Choose a size for the array: ";
-  cin >> N
+  cin >> N;
 
   int *a = new int[N];
   int temp;
