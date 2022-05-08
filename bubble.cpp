@@ -20,9 +20,16 @@ int main() {
   for (int i = 0; i < N-1; i++) {
     if (a[i] > a[i + 1]) {
       temp = a[i];
-      a[i] = b[i + 1] b[i + 1] = temp;
+      a[i] = a[i + 1];
+      a[i + 1] = temp;
     }
   }
+
+  cout << "Sorted array by bubble sort: " << endl;
+  for(int i = 0; i < N; i++) {
+    cout << a[i] << " ";
+  }
+  cout << endl;
 
   return 0;
 }
