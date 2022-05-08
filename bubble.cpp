@@ -2,34 +2,46 @@
 
 using namespace std;
 
+void swap(int *a, int first, int second) {
+    int tmp = a[first];
+    a[first] = a[second];
+    a[second] = tmp;
+}
+
 int main() {
 
-  int N;
-  cout << "Choose a size for the array: ";
-  cin >> N;
+    int N;
+    cout << "Choose a size for the array: ";
+    cin >> N;
 
-  int *a = new int[N];
-  int temp;
+    int *a = new int[N];
+    int temp;
 
-  cout << "Insert array elements:\n";
-  for (int i = 0; i < N; i++) {
-    cin >> a[i];
-  }
-
-  
-  for (int i = 0; i < N-1; i++) {
-    if (a[i] > a[i + 1]) {
-      temp = a[i];
-      a[i] = a[i + 1];
-      a[i + 1] = temp;
+    cout << "Insert array elements:\n";
+    for (int i = 0; i < N; i++) {
+        cin >> a[i];
     }
-  }
 
-  cout << "Sorted array by bubble sort: " << endl;
-  for(int i = 0; i < N; i++) {
-    cout << a[i] << " ";
-  }
-  cout << endl;
+    bool swapped = true;
+    while (swapped) {
+        swapped = false;
+        for (int i = 0; i < N-1; i++) {
+            if (a[i] > a[i + 1]) {
+                swap(a, i, i+1);
+                swapped = true;
+            }
+        }
+    }
 
-  return 0;
+    cout << "Sorted array by bubble sort: " << endl;
+    for(int i = 0; i < N; i++) {
+        cout << a[i] << " ";
+    }
+    cout << endl;
+
+    for(int i = 0; i < N; i++) {
+        delete[] a;
+    }
+
+    return 0;
 }
