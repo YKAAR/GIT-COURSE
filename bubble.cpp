@@ -42,5 +42,7 @@ int main() {
         delete[] a;
     }
 
+    cout << "\nFINE" << endl;
+
     return 0;
 }
