@@ -15,7 +15,6 @@ int main() {
     cin >> N;
 
     int *a = new int[N];
-    int temp;
 
     cout << "Insert array elements:\n";
     for (int i = 0; i < N; i++) {
